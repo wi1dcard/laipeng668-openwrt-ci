@@ -182,6 +182,8 @@ jobs:
         ./scripts/feeds install -a
 
     - name: Load Custom Configuration(加载自定义配置)
+      env:
+        CONFIG_FILE: ${{ inputs.config_file }}
       run: |
         chmod +x "$GITHUB_WORKSPACE/$DIY_SCRIPT"
         cd "$OPENWRT_PATH"
